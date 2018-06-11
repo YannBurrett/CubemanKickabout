@@ -1,0 +1,33 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/Godot Advert Emmison.png-0650f2f37febbd8e55e392400cac04ea.s3tc.stex"
+path.etc2="res://.import/Godot Advert Emmison.png-0650f2f37febbd8e55e392400cac04ea.etc2.stex"
+
+[deps]
+
+source_file="res://GFX/Godot Advert Emmison.png"
+source_md5="1fa5bab7bb81bf241e3c7f389a995fb3"
+
+dest_files=[ "res://.import/Godot Advert Emmison.png-0650f2f37febbd8e55e392400cac04ea.s3tc.stex", "res://.import/Godot Advert Emmison.png-0650f2f37febbd8e55e392400cac04ea.etc2.stex" ]
+dest_md5="89f348138779af1abf642bca98072192"
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
