@@ -10,9 +10,14 @@ config_version=3
 
 [application]
 
-config/name="SportsBall Mockup"
+config/name="Cubeman Kickabout"
 run/main_scene="res://Scenes/Level.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1900
+window/size/height=1080
 
 [input]
 
