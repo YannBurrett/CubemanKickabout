@@ -11,7 +11,7 @@ source_file="res://GFX/Football.jpeg"
 source_md5="7c93674979e296e32d81fe3e23c8139b"
 
 dest_files=[ "res://.import/Football.jpeg-083737ef4067e7917e8b9540e94d9ff6.s3tc.stex", "res://.import/Football.jpeg-083737ef4067e7917e8b9540e94d9ff6.etc2.stex" ]
-dest_md5="ae68246a3d11f44b5948e1d072c62c7d"
+dest_md5="ef1d06804383926a28f25621d6e91299"
 
 [params]
 
@@ -21,8 +21,8 @@ compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=false
-flags/mipmaps=false
-flags/anisotropic=false
+flags/mipmaps=true
+flags/anisotropic=true
 flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
