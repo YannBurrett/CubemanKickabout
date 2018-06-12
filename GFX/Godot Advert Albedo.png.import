@@ -11,7 +11,7 @@ source_file="res://GFX/Godot Advert Albedo.png"
 source_md5="06e5fb0ae48c5a3d2ee42418d61cdfbf"
 
 dest_files=[ "res://.import/Godot Advert Albedo.png-2b56a0a9957a052c99e402c53b826943.s3tc.stex", "res://.import/Godot Advert Albedo.png-2b56a0a9957a052c99e402c53b826943.etc2.stex" ]
-dest_md5="6346cb88f5cb88b5ea286c9aeec713d6"
+dest_md5="e62a3aae4170504c811d544bc89265a1"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=true
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false

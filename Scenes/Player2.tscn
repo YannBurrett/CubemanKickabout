@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Characters.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Player2.gd" type="Script" id=2]
+[ext_resource path="res://GFX/Cubedude/CubeDubePurple.material" type="Material" id=3]
 
 [node name="Player2" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
+
+[node name="Cube Dube" parent="Scene Root/Armature/Skeleton" index="0"]
+
+material/0 = ExtResource( 3 )
 
 
