@@ -8,10 +8,7 @@ path.etc2="res://.import/11 CubeDude.png-0ecd62cd1ef6616fb6584c66afd98a06.etc2.s
 [deps]
 
 source_file="res://GFX/Cubedude/11 CubeDude.png"
-source_md5="e37babac204b3c3a94fbe2d49eed40b0"
-
 dest_files=[ "res://.import/11 CubeDude.png-0ecd62cd1ef6616fb6584c66afd98a06.s3tc.stex", "res://.import/11 CubeDude.png-0ecd62cd1ef6616fb6584c66afd98a06.etc2.stex" ]
-dest_md5="6a6f47af9211920b66b184818d8f16b6"
 
 [params]
 

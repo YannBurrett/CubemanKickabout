@@ -7,10 +7,7 @@ path="res://.import/CubeDude.dae-3f75229d7de750343ab7c3a5cf0b41bd.scn"
 [deps]
 
 source_file="res://GFX/Cubedude/CubeDude.dae"
-source_md5="a33ad2a36d4df177883625e9d726e612"
-
 dest_files=[ "res://.import/CubeDude.dae-3f75229d7de750343ab7c3a5cf0b41bd.scn" ]
-dest_md5="edf897d95396eaddc46a07c2097883fd"
 
 [params]
 

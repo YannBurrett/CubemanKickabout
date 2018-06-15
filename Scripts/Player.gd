@@ -9,12 +9,13 @@ export var friction = .2
 onready var animation = $"Scene Root/AnimationPlayer"
 
 var motion = Vector3()
-
 var left = ""
 var right = ""
 var up = ""
 var down = ""
 var direction = 0.0
+
+var can_move = true
 
 
 func _physics_process(delta):
@@ -45,7 +46,8 @@ func move():
 	
 	set_rotation_degrees(Vector3(0,direction,0))
 	
-	move_and_slide(motion, DOWN)
+	if can_move:
+		move_and_slide(motion, DOWN)
 
 
 func check_floor():

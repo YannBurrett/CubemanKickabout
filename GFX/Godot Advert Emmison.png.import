@@ -8,10 +8,7 @@ path.etc2="res://.import/Godot Advert Emmison.png-0650f2f37febbd8e55e392400cac04
 [deps]
 
 source_file="res://GFX/Godot Advert Emmison.png"
-source_md5="1fa5bab7bb81bf241e3c7f389a995fb3"
-
 dest_files=[ "res://.import/Godot Advert Emmison.png-0650f2f37febbd8e55e392400cac04ea.s3tc.stex", "res://.import/Godot Advert Emmison.png-0650f2f37febbd8e55e392400cac04ea.etc2.stex" ]
-dest_md5="89f348138779af1abf642bca98072192"
 
 [params]
 
