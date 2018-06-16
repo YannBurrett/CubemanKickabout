@@ -9,6 +9,7 @@ radius = 0.25
 [sub_resource type="SphereMesh" id=2]
 
 material = ExtResource( 1 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 radius = 1.0
 height = 2.0
 radial_segments = 64
@@ -20,7 +21,7 @@ is_hemisphere = false
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 2
-collision_mask = 1
+collision_mask = 0
 mode = 0
 mass = 0.204082
 friction = 1.0

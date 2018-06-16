@@ -2,7 +2,8 @@
 
 [ext_resource path="res://GFX/Advert.material" type="Material" id=1]
 [ext_resource path="res://Scenes/Adverts.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/Advert.material" type="Material" id=3]
+[ext_resource path="res://GFX/Advert.material" type="Material" id=3]
+
 
 [sub_resource type="ArrayMesh" id=1]
 

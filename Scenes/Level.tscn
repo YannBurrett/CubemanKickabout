@@ -1,19 +1,16 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://GFX/Pitch.dae" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Level.gd" type="Script" id=2]
 [ext_resource path="res://GFX/Advert.material" type="Material" id=3]
-[ext_resource path="res://Scripts/Advert.material" type="Material" id=4]
-[ext_resource path="res://GFX/Goal.material" type="Material" id=5]
-[ext_resource path="res://GFX/Net.material" type="Material" id=6]
-[ext_resource path="res://Scripts/Net.material" type="Material" id=7]
-[ext_resource path="res://Scripts/Goal.material" type="Material" id=8]
-[ext_resource path="res://Scripts/Pitch.material" type="Material" id=9]
-[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Player1.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Player2.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Lighting.gd" type="Script" id=14]
+[ext_resource path="res://GFX/Goal.material" type="Material" id=4]
+[ext_resource path="res://GFX/Net.material" type="Material" id=5]
+[ext_resource path="res://GFX/Pitch.material" type="Material" id=6]
+[ext_resource path="res://Scenes/Player1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Player2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Lighting.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -50,7 +47,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 98051,
 "index_count": 306,
-"material": ExtResource( 5 ),
+"material": ExtResource( 4 ),
 "name": "Goal",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -82,7 +79,7 @@ params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 0.74169, 0.218964, 0.800781, 1 )
 metallic = 0.0
-metallic_specular = 0.5
+metallic_specular = 0.0
 metallic_texture_channel = 0
 roughness = 0.0
 roughness_texture_channel = 0
@@ -107,7 +104,7 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Albedo" ]
+_sections_unfolded = [ "Albedo", "Metallic" ]
 
 [sub_resource type="ConcavePolygonShape" id=5]
 
@@ -125,7 +122,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 98051,
 "index_count": 6912,
-"material": ExtResource( 6 ),
+"material": ExtResource( 5 ),
 "name": "Net",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -147,7 +144,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 98051,
 "index_count": 306,
-"material": ExtResource( 5 ),
+"material": ExtResource( 4 ),
 "name": "Goal",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -166,7 +163,19 @@ data = PoolVector3Array( 0.9014, 2.0859, 10, 0.8911, 1.8252, 10.2266, 0.9014, 1.
 
 points = PoolVector3Array( 6, 0.755371, -9.99219, -6, 0.755371, 9.99219, 6, 0.755371, 10, -5.99609, 0.755371, -10, 6, 1, -9.99219, -6, 1, 9.99219, -5.99609, 1, -10, 5.99609, 1, 10, 6, 0.755371, -11.9922, 8, 1, -11.9922, 6, 1, -11.9922, 8, 0.755371, -11.9922, -6, 0.755371, 9.99219, 5.99609, 0.755371, 12, 6, 0.755371, 10, -6, 0.755371, 11.9922, -5.99609, 0.755371, -10, -8, 0.755371, 9.99219, -6, 0.755371, 9.99219, -7.99609, 0.755371, -10, 6, 0.755371, -9.99219, -5.99609, 0.755371, -12, -5.99609, 0.755371, -10, 6, 0.755371, -11.9922, 5.99609, 0.755371, 12, -6, 0.999512, 11.9922, 5.99609, 0.999512, 12, -6, 0.755371, 11.9922, 5.99609, 1, 10, -6, 0.999512, 11.9922, -6, 1, 9.99219, 5.99609, 0.999512, 12, -5.99609, 1, -10, -7.99609, 1, -12, -5.99609, 1, -12, -7.99609, 1, -10, 6, 0.755371, -9.99219, 8, 0.755371, -11.9922, 6, 0.755371, -11.9922, 8, 0.755371, -9.99219, 6, 1, -11.9922, -5.99609, 0.755371, -12, 6, 0.755371, -11.9922, -5.99609, 1, -12, 5.99609, 0.755371, 12, 8, 0.755371, 10, 6, 0.755371, 10, 7.99609, 0.755371, 12, -5.99609, 1, -10, 6, 1, -11.9922, 6, 1, -9.99219, -5.99609, 1, -12, -6, 0.999512, 11.9922, -8, 1, 9.99219, -6, 1, 9.99219, -8, 0.999512, 11.9922, 8, 0.755371, -9.99219, 7.99609, 1, 10, 8, 1, -9.99219, 8, 0.755371, 10, 8, 0.755371, 10, 7.99609, 0.999512, 12, 7.99609, 1, 10, 7.99609, 0.755371, 12, 8, 1, -9.99219, 8, 0.755371, -11.9922, 8, 0.755371, -9.99219, 8, 1, -11.9922, 5.99609, 1, 10, 7.99609, 0.999512, 12, 5.99609, 0.999512, 12, 7.99609, 1, 10, 6, 1, -9.99219, 7.99609, 1, 10, 5.99609, 1, 10, 8, 1, -9.99219, 6, 1, -11.9922, 8, 1, -9.99219, 6, 1, -9.99219, 8, 1, -11.9922, 5.99609, 0.999512, 12, 7.99609, 0.755371, 12, 5.99609, 0.755371, 12, 7.99609, 0.999512, 12, 6, 0.755371, 10, 8, 0.755371, -9.99219, 6, 0.755371, -9.99219, 8, 0.755371, 10, -8, 0.755371, 9.99219, -7.99609, 1, -10, -8, 1, 9.99219, -7.99609, 0.755371, -10, -8, 1, 9.99219, -8, 0.755371, 11.9922, -8, 0.755371, 9.99219, -8, 0.999512, 11.9922, -7.99609, 0.755371, -10, -7.99609, 1, -12, -7.99609, 1, -10, -7.99609, 0.755371, -12, -6, 0.755371, 11.9922, -8, 0.999512, 11.9922, -6, 0.999512, 11.9922, -8, 0.755371, 11.9922, -6, 0.755371, 9.99219, -8, 0.755371, 11.9922, -6, 0.755371, 11.9922, -8, 0.755371, 9.99219, -5.99609, 0.755371, -12, -7.99609, 0.755371, -10, -5.99609, 0.755371, -10, -7.99609, 0.755371, -12, -5.99609, 1, -12, -7.99609, 0.755371, -12, -5.99609, 0.755371, -12, -7.99609, 1, -12, -6, 1, 9.99219, -7.99609, 1, -10, -5.99609, 1, -10, -8, 1, 9.99219 )
 
-[sub_resource type="Environment" id=12]
+[sub_resource type="CubeMesh" id=12]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="ConvexPolygonShape" id=13]
+
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="Environment" id=14]
 
 background_mode = 1
 background_sky_custom_fov = 0.0
@@ -175,7 +184,7 @@ background_energy = 1.0
 background_canvas_max_layer = 0
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.25
-ambient_light_sky_contribution = 0.0
+ambient_light_sky_contribution = 1.0
 fog_enabled = false
 fog_color = Color( 0.5, 0.6, 0.7, 1 )
 fog_sun_color = Color( 1, 0.9, 0.7, 1 )
@@ -193,9 +202,9 @@ tonemap_mode = 2
 tonemap_exposure = 1.0
 tonemap_white = 1.0
 auto_exposure_enabled = false
-auto_exposure_scale = 0.1
+auto_exposure_scale = 0.4
 auto_exposure_min_luma = 0.05
-auto_exposure_max_luma = 1.0
+auto_exposure_max_luma = 8.0
 auto_exposure_speed = 0.5
 ss_reflections_enabled = false
 ss_reflections_max_steps = 64
@@ -210,12 +219,12 @@ ssao_radius2 = 0.0
 ssao_intensity2 = 1.0
 ssao_bias = 0.01
 ssao_light_affect = 0.0
-ssao_color = Color( 0.734375, 0.59668, 0.59668, 1 )
+ssao_color = Color( 0, 0, 0, 1 )
 ssao_quality = 0
 ssao_blur = 3
 ssao_edge_sharpness = 4.0
 dof_blur_far_enabled = false
-dof_blur_far_distance = 50.0
+dof_blur_far_distance = 10.0
 dof_blur_far_transition = 5.0
 dof_blur_far_amount = 0.1
 dof_blur_far_quality = 1
@@ -232,29 +241,17 @@ glow_levels/4 = false
 glow_levels/5 = true
 glow_levels/6 = false
 glow_levels/7 = false
-glow_intensity = 1.0
-glow_strength = 0.5
-glow_bloom = 1.0
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.0
 glow_blend_mode = 2
 glow_hdr_threshold = 1.0
 glow_hdr_scale = 2.0
-glow_bicubic_upscale = true
+glow_bicubic_upscale = false
 adjustment_enabled = true
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 2.0
-_sections_unfolded = [ "Adjustments", "Ambient Light", "Background", "Glow", "SSAO", "Tonemap" ]
-
-[sub_resource type="CubeMesh" id=13]
-
-size = Vector3( 2, 2, 2 )
-subdivide_width = 0
-subdivide_height = 0
-subdivide_depth = 0
-
-[sub_resource type="ConvexPolygonShape" id=14]
-
-points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [node name="Level" index="0" instance=ExtResource( 1 )]
 
@@ -263,15 +260,15 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Adverts" parent="." index="0"]
 
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.5, 0, 0 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 8.5, 0, 0 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="Goal1Detect" type="Area" parent="." index="1"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 10.25 )
+transform = Transform( 1, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0.75, 10.25 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -303,7 +300,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Goal2Detect" type="Area" parent="." index="2"]
 
 editor/display_folded = true
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.748144, -9.75 )
+transform = Transform( -1, 0, -1.50996e-007, 0, 0.7, 0, 1.50996e-007, 0, -1, 0, 0.748144, -10.3622 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -335,7 +332,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Goal2" type="MeshInstance" parent="." index="3"]
 
 editor/display_folded = true
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, -0.251856, 0 )
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0.5, -0.251856, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -380,7 +377,7 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 6 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 7 )
+material/0 = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="StaticBody" type="StaticBody" parent="Goal2/Net" index="0"]
@@ -402,14 +399,14 @@ disabled = false
 
 [node name="Goal" parent="." index="4"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.544429, -0.251856, 0 )
 mesh = SubResource( 8 )
-material/0 = ExtResource( 8 )
+material/0 = ExtResource( 4 )
 _sections_unfolded = [ "material" ]
 
 [node name="StaticBody" type="StaticBody" parent="Goal" index="0"]
 
-editor/display_folded = true
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 4
@@ -444,8 +441,7 @@ disabled = false
 
 [node name="Pitch" parent="." index="5"]
 
-editor/display_folded = true
-material/0 = ExtResource( 9 )
+material/0 = ExtResource( 6 )
 _sections_unfolded = [ "material" ]
 
 [node name="StaticBody" type="StaticBody" parent="Pitch" index="0"]
@@ -465,32 +461,13 @@ _sections_unfolded = [ "Collision" ]
 shape = SubResource( 11 )
 disabled = false
 
-[node name="Camera" type="Camera" parent="." index="8"]
+[node name="Player1" parent="." index="8" instance=ExtResource( 7 )]
 
-transform = Transform( -4.37114e-08, 0.258819, -0.965926, 0, 0.965926, 0.258819, 1, 1.13133e-08, -4.2222e-08, -25, 10, 0.152399 )
-keep_aspect = 1
-cull_mask = 1048575
-environment = null
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
-current = false
-fov = 44.0
-size = 1.0
-near = 0.05
-far = 100.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="HUD" parent="Camera" index="0" instance=ExtResource( 10 )]
-
-[node name="Player1" parent="." index="9" instance=ExtResource( 11 )]
-
-transform = Transform( -1.5, 0, 1.31134e-07, 0, 1.5, 0, -1.31134e-07, 0, -1.5, 0, 0, 5 )
+transform = Transform( -1.5, 0, 1.31134e-007, 0, 1.5, 0, -1.31134e-007, 0, -1.5, 0, 0, 5 )
 collision_mask = 3
 collision/safe_margin = 0.001
 
-[node name="Player2" parent="." index="10" instance=ExtResource( 12 )]
+[node name="Player2" parent="." index="9" instance=ExtResource( 8 )]
 
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -5 )
 collision_mask = 3
@@ -498,35 +475,31 @@ collision/safe_margin = 0.001
 speed = 7
 friction = 0.2
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="11"]
-
-environment = SubResource( 12 )
-
-[node name="Ball" parent="." index="12" instance=ExtResource( 13 )]
+[node name="Ball" parent="." index="10" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58444, 0 )
 collision_mask = 5
 mass = 0.1
 bounce = 0.5
 
-[node name="Player1Spawn" type="Position3D" parent="." index="13"]
+[node name="Player1Spawn" type="Position3D" parent="." index="11"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player2Spawn" type="Position3D" parent="." index="14"]
+[node name="Player2Spawn" type="Position3D" parent="." index="12"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Timer" type="Timer" parent="." index="15"]
+[node name="Timer" type="Timer" parent="." index="13"]
 
 process_mode = 1
 wait_time = 2.0
 one_shot = true
 autostart = false
 
-[node name="Walls" type="Node" parent="." index="16"]
+[node name="Walls" type="Node" parent="." index="14"]
 
 editor/display_folded = true
 
@@ -544,7 +517,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 13 )
+mesh = SubResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -563,7 +536,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/WallR/StaticBody" index="0"]
 
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 disabled = false
 
 [node name="InnerWallR" type="MeshInstance" parent="Walls" index="1"]
@@ -580,7 +553,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 13 )
+mesh = SubResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -599,7 +572,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/InnerWallR/StaticBody" index="0"]
 
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 disabled = false
 
 [node name="InnerWallL" type="MeshInstance" parent="Walls" index="2"]
@@ -616,7 +589,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 13 )
+mesh = SubResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -635,7 +608,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/InnerWallL/StaticBody" index="0"]
 
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 disabled = false
 
 [node name="WallL" type="MeshInstance" parent="Walls" index="3"]
@@ -652,7 +625,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 13 )
+mesh = SubResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -671,7 +644,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/WallL/StaticBody" index="0"]
 
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 disabled = false
 
 [node name="WallB" type="MeshInstance" parent="Walls" index="4"]
@@ -688,7 +661,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 13 )
+mesh = SubResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -707,7 +680,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/WallB/StaticBody" index="0"]
 
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 disabled = false
 
 [node name="InnerWallB" type="MeshInstance" parent="Walls" index="5"]
@@ -724,7 +697,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 13 )
+mesh = SubResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -743,7 +716,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/InnerWallB/StaticBody" index="0"]
 
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 disabled = false
 
 [node name="WallF" type="MeshInstance" parent="Walls" index="6"]
@@ -760,7 +733,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 13 )
+mesh = SubResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -779,7 +752,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/WallF/StaticBody" index="0"]
 
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 disabled = false
 
 [node name="InnerWallF" type="MeshInstance" parent="Walls" index="7"]
@@ -796,7 +769,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 13 )
+mesh = SubResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -815,13 +788,13 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/InnerWallF/StaticBody" index="0"]
 
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 disabled = false
 
-[node name="Lighting" type="Spatial" parent="." index="17"]
+[node name="Lighting" type="Spatial" parent="." index="15"]
 
 editor/display_folded = true
-script = ExtResource( 14 )
+script = ExtResource( 10 )
 
 [node name="DSLSpotLight" type="SpotLight" parent="Lighting" index="0"]
 
@@ -914,6 +887,33 @@ spot_attenuation = 1.0
 spot_angle = 40.0
 spot_angle_attenuation = 1.0
 _sections_unfolded = [ "Editor", "Light", "Shadow", "Spot", "Transform", "Visibility" ]
+
+[node name="Camera" type="Camera" parent="." index="16"]
+
+transform = Transform( -4.37114e-008, 0.258819, -0.965926, 0, 0.965926, 0.258819, 1, 1.13133e-008, -4.2222e-008, -25, 10, 0.152399 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 44.0
+size = 1.0
+near = 0.05
+far = 100.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="HUD" parent="Camera" index="0" instance=ExtResource( 11 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera" index="1"]
+
+environment = SubResource( 14 )
+
+[connection signal="Goal1" from="." to="Camera/HUD" method="_on_Goal1"]
+
+[connection signal="Goal2" from="." to="Camera/HUD" method="_on_Goal2"]
 
 [connection signal="body_entered" from="Goal1Detect" to="." method="_on_Goal1Detect_body_entered"]
 
