@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://GFX/Pitch.dae" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Lighting.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SFX/battleThemeA.ogg" type="AudioStream" id=12]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -261,6 +262,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Spawns" type="Spatial" parent="." index="0"]
 
+editor/display_folded = true
+
 [node name="Player1Spawn" type="Position3D" parent="Spawns" index="0"]
 
 transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 2, 6 )
@@ -496,6 +499,7 @@ friction = 0.2
 
 [node name="Ball" parent="." index="11" instance=ExtResource( 9 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58444, 0 )
 collision_mask = 5
 mass = 0.1
@@ -802,6 +806,7 @@ disabled = false
 
 [node name="Lighting" type="Spatial" parent="." index="14"]
 
+editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="DSLSpotLight" type="SpotLight" parent="Lighting" index="0" groups=[
@@ -906,6 +911,7 @@ _sections_unfolded = [ "Editor", "Light", "Shadow", "Spot", "Transform", "Visibi
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="15"]
 
+editor/display_folded = true
 environment = SubResource( 14 )
 
 [node name="Camera" type="Camera" parent="WorldEnvironment" index="0"]
@@ -926,6 +932,15 @@ far = 100.0
 _sections_unfolded = [ "Transform" ]
 
 [node name="HUD" parent="WorldEnvironment/Camera" index="0" instance=ExtResource( 11 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="16"]
+
+stream = ExtResource( 12 )
+volume_db = -1.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="Goal1" from="." to="WorldEnvironment/Camera/HUD" method="_on_Goal1"]
 
