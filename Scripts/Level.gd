@@ -6,12 +6,13 @@ signal Goal2
 
 func _ready():
 	reset()
+	$Player1.rotation_degrees = Vector3(0,180,0)
 
 
 func reset(): # move the players and balls to the starting positions
-	$Ball.translation = Vector3(0,2.5,0)
-	$Player1.translation = $Player1Spawn.translation
-	$Player2.translation = $Player2Spawn.translation
+	$Ball.translation = $Spawns/BallSpawn.translation
+	$Player1.translation = $Spawns/Player1Spawn.translation
+	$Player2.translation = $Spawns/Player2Spawn.translation
 
 
 func _on_Goal1Detect_body_entered(body):

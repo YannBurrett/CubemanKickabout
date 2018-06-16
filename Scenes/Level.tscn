@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://GFX/Pitch.dae" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Level.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=2]
 [ext_resource path="res://GFX/Advert.material" type="Material" id=3]
 [ext_resource path="res://GFX/Goal.material" type="Material" id=4]
 [ext_resource path="res://GFX/Net.material" type="Material" id=5]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Player1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Player2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Lighting.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/Lighting.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
@@ -198,7 +198,7 @@ fog_height_enabled = false
 fog_height_min = 0.0
 fog_height_max = 100.0
 fog_height_curve = 1.0
-tonemap_mode = 2
+tonemap_mode = 0
 tonemap_exposure = 1.0
 tonemap_white = 1.0
 auto_exposure_enabled = false
@@ -211,7 +211,7 @@ ss_reflections_max_steps = 64
 ss_reflections_fade_in = 0.15
 ss_reflections_fade_out = 2.0
 ss_reflections_depth_tolerance = 0.2
-ss_reflections_roughness = true
+ss_reflections_roughness = false
 ssao_enabled = false
 ssao_radius = 1.0
 ssao_intensity = 1.0
@@ -252,20 +252,38 @@ adjustment_enabled = true
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 2.0
+_sections_unfolded = [ "Adjustments", "Ambient Light", "Auto Exposure", "DOF Far Blur", "Glow", "SS Reflections", "SSAO", "Tonemap" ]
 
 [node name="Level" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Adverts" parent="." index="0"]
+[node name="Spawns" type="Spatial" parent="." index="0"]
+
+[node name="Player1Spawn" type="Position3D" parent="Spawns" index="0"]
+
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 2, 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player2Spawn" type="Position3D" parent="Spawns" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BallSpawn" type="Position3D" parent="Spawns" index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Adverts" parent="." index="1"]
 
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 8.5, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="Goal1Detect" type="Area" parent="." index="1"]
+[node name="Goal1Detect" type="Area" parent="." index="2"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0.75, 10.25 )
@@ -297,7 +315,7 @@ shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Goal2Detect" type="Area" parent="." index="2"]
+[node name="Goal2Detect" type="Area" parent="." index="3"]
 
 editor/display_folded = true
 transform = Transform( -1, 0, -1.50996e-007, 0, 0.7, 0, 1.50996e-007, 0, -1, 0, 0.748144, -10.3622 )
@@ -329,7 +347,7 @@ shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Goal2" type="MeshInstance" parent="." index="3"]
+[node name="Goal2" type="MeshInstance" parent="." index="4"]
 
 editor/display_folded = true
 transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0.5, -0.251856, 0 )
@@ -397,7 +415,7 @@ _sections_unfolded = [ "Collision" ]
 shape = SubResource( 7 )
 disabled = false
 
-[node name="Goal" parent="." index="4"]
+[node name="Goal" parent="." index="5"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.544429, -0.251856, 0 )
@@ -439,8 +457,9 @@ _sections_unfolded = [ "Collision" ]
 shape = SubResource( 10 )
 disabled = false
 
-[node name="Pitch" parent="." index="5"]
+[node name="Pitch" parent="." index="6"]
 
+editor/display_folded = true
 material/0 = ExtResource( 6 )
 _sections_unfolded = [ "material" ]
 
@@ -461,13 +480,13 @@ _sections_unfolded = [ "Collision" ]
 shape = SubResource( 11 )
 disabled = false
 
-[node name="Player1" parent="." index="8" instance=ExtResource( 7 )]
+[node name="Player1" parent="." index="9" instance=ExtResource( 7 )]
 
 transform = Transform( -1.5, 0, 1.31134e-007, 0, 1.5, 0, -1.31134e-007, 0, -1.5, 0, 0, 5 )
 collision_mask = 3
 collision/safe_margin = 0.001
 
-[node name="Player2" parent="." index="9" instance=ExtResource( 8 )]
+[node name="Player2" parent="." index="10" instance=ExtResource( 8 )]
 
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -5 )
 collision_mask = 3
@@ -475,31 +494,21 @@ collision/safe_margin = 0.001
 speed = 7
 friction = 0.2
 
-[node name="Ball" parent="." index="10" instance=ExtResource( 9 )]
+[node name="Ball" parent="." index="11" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.58444, 0 )
 collision_mask = 5
 mass = 0.1
 bounce = 0.5
 
-[node name="Player1Spawn" type="Position3D" parent="." index="11"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Player2Spawn" type="Position3D" parent="." index="12"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Timer" type="Timer" parent="." index="13"]
+[node name="Timer" type="Timer" parent="." index="12"]
 
 process_mode = 1
 wait_time = 2.0
 one_shot = true
 autostart = false
 
-[node name="Walls" type="Node" parent="." index="14"]
+[node name="Walls" type="Node" parent="." index="13"]
 
 editor/display_folded = true
 
@@ -791,12 +800,13 @@ _sections_unfolded = [ "Collision", "Transform" ]
 shape = SubResource( 13 )
 disabled = false
 
-[node name="Lighting" type="Spatial" parent="." index="15"]
+[node name="Lighting" type="Spatial" parent="." index="14"]
 
-editor/display_folded = true
 script = ExtResource( 10 )
 
-[node name="DSLSpotLight" type="SpotLight" parent="Lighting" index="0"]
+[node name="DSLSpotLight" type="SpotLight" parent="Lighting" index="0" groups=[
+"lights",
+]]
 
 transform = Transform( 0.994118, -0.0765812, 0.0765812, 0, 0.707107, 0.707107, -0.108302, -0.702948, 0.702948, -8, 8, 12 )
 layers = 1
@@ -819,7 +829,9 @@ spot_angle = 40.0
 spot_angle_attenuation = 1.0
 _sections_unfolded = [ "Editor", "Light", "Shadow", "Spot", "Transform", "Visibility" ]
 
-[node name="USLSpotLight" type="SpotLight" parent="Lighting" index="1"]
+[node name="USLSpotLight" type="SpotLight" parent="Lighting" index="1" groups=[
+"lights",
+]]
 
 transform = Transform( 0.94262, -0.23608, 0.23608, 0, 0.707107, 0.707107, -0.333867, -0.666533, 0.666533, 8, 8, 12 )
 layers = 1
@@ -842,7 +854,9 @@ spot_angle = 40.0
 spot_angle_attenuation = 1.0
 _sections_unfolded = [ "Editor", "Light", "Shadow", "Spot", "Transform", "Visibility" ]
 
-[node name="DSRSpotLight" type="SpotLight" parent="Lighting" index="2"]
+[node name="DSRSpotLight" type="SpotLight" parent="Lighting" index="2" groups=[
+"lights",
+]]
 
 transform = Transform( -0.642788, 0.541675, -0.541675, 0, 0.707107, 0.707107, 0.766044, 0.454519, -0.454519, -8, 8, -12 )
 layers = 1
@@ -865,7 +879,9 @@ spot_angle = 40.0
 spot_angle_attenuation = 1.0
 _sections_unfolded = [ "Editor", "Light", "Shadow", "Spot", "Transform", "Visibility" ]
 
-[node name="USRSpotLight" type="SpotLight" parent="Lighting" index="3"]
+[node name="USRSpotLight" type="SpotLight" parent="Lighting" index="3" groups=[
+"lights",
+]]
 
 transform = Transform( -0.701079, -0.690081, 0.179655, -0.234411, 0.46097, 0.855896, -0.673453, 0.557938, -0.484939, 8, 8, -12 )
 layers = 1
@@ -888,7 +904,11 @@ spot_angle = 40.0
 spot_angle_attenuation = 1.0
 _sections_unfolded = [ "Editor", "Light", "Shadow", "Spot", "Transform", "Visibility" ]
 
-[node name="Camera" type="Camera" parent="." index="16"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="15"]
+
+environment = SubResource( 14 )
+
+[node name="Camera" type="Camera" parent="WorldEnvironment" index="0"]
 
 transform = Transform( -4.37114e-008, 0.258819, -0.965926, 0, 0.965926, 0.258819, 1, 1.13133e-008, -4.2222e-008, -25, 10, 0.152399 )
 keep_aspect = 1
@@ -905,15 +925,11 @@ near = 0.05
 far = 100.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="HUD" parent="Camera" index="0" instance=ExtResource( 11 )]
+[node name="HUD" parent="WorldEnvironment/Camera" index="0" instance=ExtResource( 11 )]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera" index="1"]
+[connection signal="Goal1" from="." to="WorldEnvironment/Camera/HUD" method="_on_Goal1"]
 
-environment = SubResource( 14 )
-
-[connection signal="Goal1" from="." to="Camera/HUD" method="_on_Goal1"]
-
-[connection signal="Goal2" from="." to="Camera/HUD" method="_on_Goal2"]
+[connection signal="Goal2" from="." to="WorldEnvironment/Camera/HUD" method="_on_Goal2"]
 
 [connection signal="body_entered" from="Goal1Detect" to="." method="_on_Goal1Detect_body_entered"]
 
