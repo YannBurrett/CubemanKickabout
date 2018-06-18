@@ -931,6 +931,15 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="HUD" parent="WorldEnvironment/Camera" index="0" instance=ExtResource( 11 )]
 
+[node name="Tween" type="Tween" parent="WorldEnvironment" index="1"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
 [connection signal="Goal1" from="." to="WorldEnvironment/Camera/HUD" method="_on_Goal1"]
 
 [connection signal="Goal2" from="." to="WorldEnvironment/Camera/HUD" method="_on_Goal2"]
