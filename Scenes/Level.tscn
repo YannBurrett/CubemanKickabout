@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://GFX/Pitch.dae" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Lighting.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=11]
-[ext_resource path="res://SFX/battleThemeA.ogg" type="AudioStream" id=12]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -253,7 +252,7 @@ adjustment_enabled = true
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 2.0
-_sections_unfolded = [ "Adjustments", "Ambient Light", "Auto Exposure", "DOF Far Blur", "Glow", "SS Reflections", "SSAO", "Tonemap" ]
+_sections_unfolded = [ "Adjustments", "Ambient Light", "Auto Exposure", "Background", "DOF Far Blur", "Glow", "SS Reflections", "SSAO", "Tonemap" ]
 
 [node name="Level" index="0" instance=ExtResource( 1 )]
 
@@ -911,7 +910,6 @@ _sections_unfolded = [ "Editor", "Light", "Shadow", "Spot", "Transform", "Visibi
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="15"]
 
-editor/display_folded = true
 environment = SubResource( 14 )
 
 [node name="Camera" type="Camera" parent="WorldEnvironment" index="0"]
@@ -932,15 +930,6 @@ far = 100.0
 _sections_unfolded = [ "Transform" ]
 
 [node name="HUD" parent="WorldEnvironment/Camera" index="0" instance=ExtResource( 11 )]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="16"]
-
-stream = ExtResource( 12 )
-volume_db = -1.0
-pitch_scale = 1.0
-autoplay = true
-mix_target = 0
-bus = "Master"
 
 [connection signal="Goal1" from="." to="WorldEnvironment/Camera/HUD" method="_on_Goal1"]
 

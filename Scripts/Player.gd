@@ -25,29 +25,31 @@ func _physics_process(delta):
 
 
 func move():
-	if Input.is_action_pressed(left) && not Input.is_action_pressed(right):
-		motion.z = - speed
-		direction = 180
-	elif Input.is_action_pressed(right) && not Input.is_action_pressed(left):
-		motion.z = speed
-		direction = 0
-	else:
-		motion.z = lerp(motion.z, 0, friction)
-
-
-	if Input.is_action_pressed(up) && not Input.is_action_pressed(down):
-		motion.x = speed
-		direction = 90
-	elif Input.is_action_pressed(down) && not Input.is_action_pressed(up):
-		motion.x = -speed
-		direction = -90
-	else:
-		motion.x = lerp(motion.x, 0, friction)
-	
-	set_rotation_degrees(Vector3(0,direction,0))
-	
 	if can_move:
+		if Input.is_action_pressed(left) && not Input.is_action_pressed(right):
+			motion.z = - speed
+			direction = 180
+		elif Input.is_action_pressed(right) && not Input.is_action_pressed(left):
+			motion.z = speed
+			direction = 0
+		else:
+			motion.z = lerp(motion.z, 0, friction)
+	
+	
+		if Input.is_action_pressed(up) && not Input.is_action_pressed(down):
+			motion.x = speed
+			direction = 90
+		elif Input.is_action_pressed(down) && not Input.is_action_pressed(up):
+			motion.x = -speed
+			direction = -90
+		else:
+			motion.x = lerp(motion.x, 0, friction)
+	
+		set_rotation_degrees(Vector3(0,direction,0))
 		move_and_slide(motion, DOWN)
+	else:
+		animation.stop()
+
 
 
 func check_floor():

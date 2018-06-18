@@ -5,3 +5,4 @@ func _ready():
 	right = "ui_right"
 	down = "ui_down"
 	up = "ui_up"
+	direction = 180.00

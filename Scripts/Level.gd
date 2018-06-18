@@ -10,20 +10,29 @@ func _ready():
 
 
 func reset(): # move the players and balls to the starting positions
+	$WorldEnvironment.environment.background_color = Color(0,0,0)
 	$Ball.translation = $Spawns/BallSpawn.translation
 	$Player1.translation = $Spawns/Player1Spawn.translation
 	$Player2.translation = $Spawns/Player2Spawn.translation
+	$Player1.can_move = true
+	$Player2.can_move = true
 
 
 func _on_Goal1Detect_body_entered(body):
 	if $Timer.is_stopped():
 		emit_signal("Goal1")
+		$Player1.can_move = false
+		$Player2.can_move = false
+		$WorldEnvironment.environment.background_color = Color(0.25,0,0.25)
 		goal()
 
 
 func _on_Goal2Detect_body_entered(body):
 	if $Timer.is_stopped():
 		emit_signal("Goal2")
+		$Player1.can_move = false
+		$Player2.can_move = false
+		$WorldEnvironment.environment.background_color = Color(0,0.25,0)
 		goal()
 
 
