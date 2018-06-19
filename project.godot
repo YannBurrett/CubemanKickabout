@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="CubeDude Kickabout"
+config/name="Cubeman Kickabout"
 run/main_scene="res://Scenes/Level.tscn"
 config/icon="res://icon.png"
 

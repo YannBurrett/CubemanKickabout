@@ -1,11 +1,14 @@
 extends CanvasLayer
 
+signal P1_Scored
+signal P2_Scored
+signal game_over
+
 var P1_score = 0
 var P2_score = 0
-export var max_score = 1
+export var max_score = 10
 
 func _ready():
-	$Title.bbcode_text = "[center]CubeDude Kickabout[/center]"
 	update_score()
 
 func _on_Goal1():

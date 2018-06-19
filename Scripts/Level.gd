@@ -11,6 +11,7 @@ var colour_target = black
 
 func _ready():
 	reset()
+	$Player1.rotation_degrees = Vector3(0,180,0)
 
 
 func reset(): # move the players and balls to the starting positions
