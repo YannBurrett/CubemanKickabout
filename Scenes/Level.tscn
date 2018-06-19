@@ -931,6 +931,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="HUD" parent="WorldEnvironment/Camera" index="0" instance=ExtResource( 11 )]
 
+max_score = 1
+
 [node name="Tween" type="Tween" parent="WorldEnvironment" index="1"]
 
 repeat = false
